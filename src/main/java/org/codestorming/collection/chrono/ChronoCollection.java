@@ -22,6 +22,7 @@ import java.util.Collection;
  * The added or removed collection contains only the elements added or removed since the last reset of this collection.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public interface ChronoCollection<E> extends Collection<E> {
 

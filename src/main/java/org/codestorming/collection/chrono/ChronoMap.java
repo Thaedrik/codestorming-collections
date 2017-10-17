@@ -22,6 +22,7 @@ import java.util.Map;
  * The added or removed maps collections contains only the elements added or removed since the last reset of this map.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public interface ChronoMap<K, V> extends Map<K, V> {
 

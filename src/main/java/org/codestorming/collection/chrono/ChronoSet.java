@@ -17,6 +17,7 @@ import java.util.Set;
  * A {@code ChronoSet} is a {@link ChronoCollection} for {@link Set sets}.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public interface ChronoSet<E> extends Set<E>, ChronoCollection<E> {
 

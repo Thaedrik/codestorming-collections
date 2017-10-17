@@ -19,6 +19,7 @@ import java.util.List;
  * {@link ArrayList} that implements {@link ChronoCollection}.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public class ChronoArrayList<E> extends ArrayList<E> implements ChronoList<E> {
 

@@ -20,6 +20,7 @@ import java.util.Set;
  * {@link HashSet} implementing {@link ChronoCollection}.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public class ChronoHashSet<E> extends HashSet<E> implements ChronoSet<E> {
 

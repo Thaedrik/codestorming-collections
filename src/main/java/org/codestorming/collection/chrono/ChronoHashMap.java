@@ -21,6 +21,7 @@ import java.util.Set;
  * A {@code ChronoHashMap} is a {@link HashMap} implementing {@link ChronoMap}.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public class ChronoHashMap<K, V> extends HashMap<K, V> implements ChronoMap<K, V> {
 

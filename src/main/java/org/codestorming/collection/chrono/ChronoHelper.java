@@ -19,6 +19,7 @@ import java.util.List;
  * The {@link ChronoHelper} utility class gathers the methods used in the Chrono-collection API.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public class ChronoHelper {
 

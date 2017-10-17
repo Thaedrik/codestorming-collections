@@ -18,6 +18,7 @@ import java.util.Iterator;
  * {@link Collection} that delegates operation to its internal collection defined on creation.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 class DelegatedCollection<E> implements Collection<E> {
 

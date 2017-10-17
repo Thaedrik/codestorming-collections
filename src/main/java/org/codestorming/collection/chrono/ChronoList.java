@@ -17,6 +17,7 @@ import java.util.List;
  * A {@code ChronoList} is a {@link ChronoCollection} for {@link List lists}.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 public interface ChronoList<E> extends List<E>, ChronoCollection<E> {
 

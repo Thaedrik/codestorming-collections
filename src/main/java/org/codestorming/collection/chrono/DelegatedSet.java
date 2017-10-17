@@ -19,6 +19,7 @@ import java.util.Set;
  * {@link Set} that delegates operation to its internal set defined on creation.
  *
  * @author Thaedrik [thaedrik@codestorming.org]
+ * @since 1.1
  */
 class DelegatedSet<T> extends DelegatedCollection<T> implements Set<T> {
 
