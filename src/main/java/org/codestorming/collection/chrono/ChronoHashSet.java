@@ -55,6 +55,7 @@ public class ChronoHashSet<E> extends HashSet<E> implements ChronoSet<E> {
 	 * @param <E> Type of element contained in the set.
 	 * @return a new {@code ChronoHashSet} initialized with the given elements.
 	 */
+	@SafeVarargs
 	public static <E> ChronoHashSet<E> create(E e, E... elements) {
 		ChronoHashSet<E> set = new ChronoHashSet<>();
 		set._add(e);

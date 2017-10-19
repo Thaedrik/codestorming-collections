@@ -49,8 +49,12 @@ public interface OrderedSet<E> extends List<E>, Set<E> {
 		Arrays.sort(a, (Comparator) c);
 		ListIterator<E> i = this.listIterator();
 		for (Object e : a) {
-			i.next();
-			i.set((E) e);
+			if (i.hasNext()) {
+				i.next();
+				i.set((E) e);
+			} else {
+				i.add((E) e);
+			}
 		}
 	}
 

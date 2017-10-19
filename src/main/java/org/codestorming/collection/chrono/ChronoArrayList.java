@@ -54,6 +54,7 @@ public class ChronoArrayList<E> extends ArrayList<E> implements ChronoList<E> {
 	 * @param <E> Type of element contained in the list.
 	 * @return a new {@code ChronoArrayList} initialized with the given elements.
 	 */
+	@SafeVarargs
 	public static <E> ChronoArrayList<E> create(E e, E... elements) {
 		ChronoArrayList<E> list = new ChronoArrayList<>();
 		list._add(e);

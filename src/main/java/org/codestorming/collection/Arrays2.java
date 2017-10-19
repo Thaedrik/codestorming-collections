@@ -168,7 +168,7 @@ public class Arrays2 {
 	 * @param end Index of the last element of {@code insertedValues} to insert + {@code 1}.
 	 * @return a new array with the content of the given {@code array} and the inserted values.
 	 */
-	public static short[] insert(short[] array, int insertIndex, byte[] insertedValues, int begin, int end) {
+	public static short[] insert(short[] array, int insertIndex, short[] insertedValues, int begin, int end) {
 		checkIndexes(insertIndex, begin, end);
 		if (insertIndex > array.length || begin > insertedValues.length - 1 || end > insertedValues.length) {
 			throw new ArrayIndexOutOfBoundsException();

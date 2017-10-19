@@ -186,11 +186,6 @@ public class Collections3 {
 
 		private OrderedSet<E> delegate;
 
-		/**
-		 * Creates a new {@code UnmodifiableOrderedSet}.
-		 *
-		 * @param orderedSet
-		 */
 		public UnmodifiableOrderedSet(OrderedSet<E> orderedSet) {
 			delegate = orderedSet;
 		}

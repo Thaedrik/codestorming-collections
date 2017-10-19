@@ -33,8 +33,7 @@ import java.util.Set;
  * The addition of an object already present in the set does nothing, that is, the index at which the object was first
  * inserted does not change.
  * <p>
- * The {@link #subList(int, int)} method and the {@link ListIterator}'s methods <em>set</em> and <em>add</em> are
- * <strong>not supported</strong> <TODO : implements these methods>.
+ * The {@link #subList(int, int)} method is <strong>not supported</strong>
  *
  * @author Thaedrik [thaedrik@codestorming.org]
  */
@@ -72,7 +71,7 @@ public class OrderedHashSet<E> implements OrderedSet<E>, RandomAccess, Cloneable
 	 */
 	@SuppressWarnings("unchecked")
 	public OrderedHashSet() {
-		internalSet = new HashSet<E>(DEFAULT_CAPACITY);
+		internalSet = new HashSet<>(DEFAULT_CAPACITY);
 		elements = (E[]) new Object[DEFAULT_CAPACITY];
 	}
 
@@ -84,7 +83,7 @@ public class OrderedHashSet<E> implements OrderedSet<E>, RandomAccess, Cloneable
 	@SuppressWarnings("unchecked")
 	public OrderedHashSet(Collection<? extends E> c) {
 		int initialCapacity = Math.max((int) (c.size() / loadFactor) + 1, DEFAULT_CAPACITY);
-		internalSet = new HashSet<E>(initialCapacity);
+		internalSet = new HashSet<>(initialCapacity);
 		elements = (E[]) new Object[initialCapacity];
 		addAll(c);
 	}
@@ -92,12 +91,12 @@ public class OrderedHashSet<E> implements OrderedSet<E>, RandomAccess, Cloneable
 	/**
 	 * Creates a new {@code OrderedHashSet}.
 	 *
-	 * @param initialCapacity
-	 * @param loadFactor
+	 * @param initialCapacity initial capacity of the internal array.
+	 * @param loadFactor Load factor used when the internal array must grow.
 	 */
 	@SuppressWarnings("unchecked")
 	public OrderedHashSet(int initialCapacity, float loadFactor) {
-		internalSet = new HashSet<E>(initialCapacity, loadFactor);
+		internalSet = new HashSet<>(initialCapacity, loadFactor);
 		this.loadFactor = loadFactor;
 		elements = (E[]) new Object[initialCapacity];
 	}
@@ -105,11 +104,11 @@ public class OrderedHashSet<E> implements OrderedSet<E>, RandomAccess, Cloneable
 	/**
 	 * Creates a new {@code OrderedHashSet}.
 	 *
-	 * @param initialCapacity
+	 * @param initialCapacity initial capacity of the internal array.
 	 */
 	@SuppressWarnings("unchecked")
 	public OrderedHashSet(int initialCapacity) {
-		internalSet = new HashSet<E>(initialCapacity);
+		internalSet = new HashSet<>(initialCapacity);
 		elements = (E[]) new Object[initialCapacity];
 	}
 
@@ -582,12 +581,15 @@ public class OrderedHashSet<E> implements OrderedSet<E>, RandomAccess, Cloneable
 
 		@Override
 		public void set(T e) {
-			throw new UnsupportedOperationException();
+			final Object toRemove = orderedHashSet.elements[lastReturned];
+			orderedHashSet.elements[lastReturned] = e;
+			orderedHashSet.internalSet.remove(toRemove);
+			orderedHashSet.internalSet.add(e);
 		}
 
 		@Override
 		public void add(T e) {
-			throw new UnsupportedOperationException();
+			orderedHashSet.add(currentIndex++, e);
 		}
 	}
 }
