@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012-2017 Codestorming.org
+ * Copyright (c) 2012-2018 Codestorming.org
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -310,6 +310,180 @@ public class Arrays2 {
 			newArray = array;
 		}
 		return newArray;
+	}
+
+	/**
+	 * Replaces the "length" bytes inside the given array starting at "startIndex".
+	 * <p>
+	 * If the given array is not large enough to contain the new bytes, a new array is created.
+	 *
+	 * @param array The source array where the values are replaced.
+	 * @param startIndex Starting index of the replaced values.
+	 * @param values New values to put inside the source array.
+	 * @param begin Starting index of the values array.
+	 * @param length Number of bytes from the values array to put in the source array.
+	 * @return the source array with its replaced values (or the newly created array)
+	 * @since 2.1
+	 */
+	public static byte[] replace(byte[] array, int startIndex, byte[] values, int begin, int length) {
+		checkIndexes(startIndex, begin, length);
+		if (startIndex > array.length) {
+			throw new ArrayIndexOutOfBoundsException(startIndex);
+		} // else
+
+		if (startIndex + length > array.length) {
+			byte[] newArray = new byte[startIndex + length];
+			System.arraycopy(array, 0, newArray, 0, startIndex);
+			array = newArray;
+		}
+
+		System.arraycopy(values, begin, array, startIndex, length);
+		return array;
+	}
+
+	/**
+	 * Replaces the "length" shorts inside the given array starting at "startIndex".
+	 * <p>
+	 * If the given array is not large enough to contain the new shorts, a new array is created.
+	 *
+	 * @param array The source array where the values are replaced.
+	 * @param startIndex Starting index of the replaced values.
+	 * @param values New values to put inside the source array.
+	 * @param begin Starting index of the values array.
+	 * @param length Number of shorts from the values array to put in the source array.
+	 * @return the source array with its replaced values (or the newly created array)
+	 * @since 2.1
+	 */
+	public static short[] replace(short[] array, int startIndex, short[] values, int begin, int length) {
+		checkIndexes(startIndex, begin, length);
+		if (startIndex > array.length) {
+			throw new ArrayIndexOutOfBoundsException(startIndex);
+		} // else
+
+		if (startIndex + length > array.length) {
+			short[] newArray = new short[startIndex + length];
+			System.arraycopy(array, 0, newArray, 0, startIndex);
+			array = newArray;
+		}
+
+		System.arraycopy(values, begin, array, startIndex, length);
+		return array;
+	}
+
+	/**
+	 * Replaces the "length" ints inside the given array starting at "startIndex".
+	 * <p>
+	 * If the given array is not large enough to contain the new ints, a new array is created.
+	 *
+	 * @param array The source array where the values are replaced.
+	 * @param startIndex Starting index of the replaced values.
+	 * @param values New values to put inside the source array.
+	 * @param begin Starting index of the values array.
+	 * @param length Number of ints from the values array to put in the source array.
+	 * @return the source array with its replaced values (or the newly created array)
+	 * @since 2.1
+	 */
+	public static int[] replace(int[] array, int startIndex, int[] values, int begin, int length) {
+		checkIndexes(startIndex, begin, length);
+		if (startIndex > array.length) {
+			throw new ArrayIndexOutOfBoundsException(startIndex);
+		} // else
+
+		if (startIndex + length > array.length) {
+			int[] newArray = new int[startIndex + length];
+			System.arraycopy(array, 0, newArray, 0, startIndex);
+			array = newArray;
+		}
+
+		System.arraycopy(values, begin, array, startIndex, length);
+		return array;
+	}
+
+	/**
+	 * Replaces the "length" longs inside the given array starting at "startIndex".
+	 * <p>
+	 * If the given array is not large enough to contain the new longs, a new array is created.
+	 *
+	 * @param array The source array where the values are replaced.
+	 * @param startIndex Starting index of the replaced values.
+	 * @param values New values to put inside the source array.
+	 * @param begin Starting index of the values array.
+	 * @param length Number of longs from the values array to put in the source array.
+	 * @return the source array with its replaced values (or the newly created array)
+	 * @since 2.1
+	 */
+	public static long[] replace(long[] array, int startIndex, long[] values, int begin, int length) {
+		checkIndexes(startIndex, begin, length);
+		if (startIndex > array.length) {
+			throw new ArrayIndexOutOfBoundsException(startIndex);
+		} // else
+
+		if (startIndex + length > array.length) {
+			long[] newArray = new long[startIndex + length];
+			System.arraycopy(array, 0, newArray, 0, startIndex);
+			array = newArray;
+		}
+
+		System.arraycopy(values, begin, array, startIndex, length);
+		return array;
+	}
+
+	/**
+	 * Replaces the "length" doubles inside the given array starting at "startIndex".
+	 * <p>
+	 * If the given array is not large enough to contain the new doubles, a new array is created.
+	 *
+	 * @param array The source array where the values are replaced.
+	 * @param startIndex Starting index of the replaced values.
+	 * @param values New values to put inside the source array.
+	 * @param begin Starting index of the values array.
+	 * @param length Number of doubles from the values array to put in the source array.
+	 * @return the source array with its replaced values (or the newly created array)
+	 * @since 2.1
+	 */
+	public static double[] replace(double[] array, int startIndex, double[] values, int begin, int length) {
+		checkIndexes(startIndex, begin, length);
+		if (startIndex > array.length) {
+			throw new ArrayIndexOutOfBoundsException(startIndex);
+		} // else
+
+		if (startIndex + length > array.length) {
+			double[] newArray = new double[startIndex + length];
+			System.arraycopy(array, 0, newArray, 0, startIndex);
+			array = newArray;
+		}
+
+		System.arraycopy(values, begin, array, startIndex, length);
+		return array;
+	}
+
+	/**
+	 * Replaces the "length" floats inside the given array starting at "startIndex".
+	 * <p>
+	 * If the given array is not large enough to contain the new floats, a new array is created.
+	 *
+	 * @param array The source array where the values are replaced.
+	 * @param startIndex Starting index of the replaced values.
+	 * @param values New values to put inside the source array.
+	 * @param begin Starting index of the values array.
+	 * @param length Number of floats from the values array to put in the source array.
+	 * @return the source array with its replaced values (or the newly created array)
+	 * @since 2.1
+	 */
+	public static float[] replace(float[] array, int startIndex, float[] values, int begin, int length) {
+		checkIndexes(startIndex, begin, length);
+		if (startIndex > array.length) {
+			throw new ArrayIndexOutOfBoundsException(startIndex);
+		} // else
+
+		if (startIndex + length > array.length) {
+			float[] newArray = new float[startIndex + length];
+			System.arraycopy(array, 0, newArray, 0, startIndex);
+			array = newArray;
+		}
+
+		System.arraycopy(values, begin, array, startIndex, length);
+		return array;
 	}
 
 	// Suppressing default constructor, ensuring non-instantiability
